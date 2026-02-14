@@ -2,12 +2,101 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>dnd_encounter_builder</title>
+    <title>D&D Encounter Builder</title>
+
+    <meta
+      name="description"
+      content="Build balanced D&D encounters, explore monsters, and generate adventure ideas."
+    />
+
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
+
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <!-- Header / Navigation -->
+    <header class="site-header">
+      <h1>D&D Encounter Builder</h1>
+
+      <nav aria-label="Main navigation">
+        <a href="/index.html" aria-current="page">Home</a>
+        <a href="/monsters.html">Monsters</a>
+        <a href="/encounters.html">Encounters</a>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+      <!-- Hero Section -->
+      <section class="hero">
+        <img
+          src="https://images.unsplash.com/photo-1604079628061-4a8a5b8b8ef6?auto=format&fit=crop&w=1400&q=80"
+          alt="Fantasy dungeon entrance"
+        />
+
+        <div class="hero-overlay">
+          <h2>Prepare Epic Adventures</h2>
+
+          <p class="muted">
+            Build balanced encounters, discover monsters, and generate story ideas.
+          </p>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="panel">
+        <h2>About This App</h2>
+
+        <p>
+          The D&D Encounter Builder helps Dungeon Masters prepare game sessions
+          faster and more easily. Using official game data and fantasy imagery,
+          you can explore monsters, generate encounters, and save your favorite
+          ideas for future sessions.
+        </p>
+      </section>
+
+      <!-- Features Section -->
+      <section class="panel">
+        <h2>Main Features</h2>
+
+        <ul class="feature-list">
+          <li>🔍 Search and filter D&D monsters</li>
+          <li>⚔️ Generate balanced encounters</li>
+          <li>📜 Create quest and lore ideas</li>
+          <li>🖼️ View immersive fantasy visuals</li>
+          <li>💾 Save favorite encounters</li>
+        </ul>
+      </section>
+
+      <!-- Call to Action -->
+      <section class="panel center">
+        <h2>Get Started</h2>
+
+        <p>
+          Jump in and start building your next adventure.
+        </p>
+
+        <div class="cta-buttons">
+          <a class="btn primary" href="/monsters.html">Browse Monsters</a>
+          <a class="btn" href="/encounters.html">Build Encounter</a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p>
+        © <span id="year"></span> D&D Encounter Builder • Created by Davin Quist
+      </p>
+    </footer>
+
+    <!-- JS -->
+    <script type="module">
+      // Auto-update footer year
+      document.getElementById("year").textContent =
+        new Date().getFullYear();
+    </script>
   </body>
 </html>
