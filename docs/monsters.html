@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D&D Encounter Builder | Monsters</title>
+    <script type="module" crossorigin src="/dnd_encounter_builder/assets/monsters-BBiOrTgO.js"></script>
+    <link rel="modulepreload" crossorigin href="/dnd_encounter_builder/assets/main-4kQcdMcL.js">
+    <link rel="modulepreload" crossorigin href="/dnd_encounter_builder/assets/render-C2sAf7Np.js">
+    <link rel="stylesheet" crossorigin href="/dnd_encounter_builder/assets/main-BGDRTCii.css">
+  </head>
+
+  <body>
+    <header class="site-header">
+      <h1>D&D Encounter Builder</h1>
+      <nav aria-label="Main navigation">
+        <a href="./index.html">Home</a>
+        <a href="./monsters.html">Monsters</a>
+        <a href="./encounters.html">Encounters</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="hero" id="hero">
+        <img id="heroImg" alt="" />
+        <div class="hero-overlay">
+          <h2 id="heroTitle">Theme</h2>
+          <p class="muted" id="heroAttribution"></p>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Monster Search</h2>
+
+        <div class="controls">
+          <label>
+            Name
+            <input id="q" type="search" placeholder="e.g., goblin" />
+          </label>
+
+          <label>
+            CR (max)
+            <select id="crMax">
+              <option value="">Any</option>
+              <option>1/8</option>
+              <option>1/4</option>
+              <option>1/2</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>5</option>
+              <option>8</option>
+              <option>10</option>
+              <option>12</option>
+              <option>15</option>
+              <option>20</option>
+            </select>
+          </label>
+
+          <button id="searchBtn" type="button">Search</button>
+        </div>
+
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+      </section>
+
+      <section>
+        <div id="grid" class="grid" aria-label="Monster results"></div>
+      </section>
+
+      <!-- Modal -->
+      <dialog id="monsterModal" class="modal">
+        <div class="modal-inner">
+          <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+          <div id="modalBody"></div>
+        </div>
+      </dialog>
+    </main>
+
+  </body>
+</html>
