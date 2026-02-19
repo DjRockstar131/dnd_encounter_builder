@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D&D Encounter Builder | Encounters</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <h1>D&D Encounter Builder</h1>
+      <nav aria-label="Main navigation">
+        <a href="./index.html">Home</a>
+        <a href="./monsters.html">Monsters</a>
+        <a href="./encounters.html">Encounters</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="hero" id="hero">
+        <img id="heroImg" alt="" />
+        <div class="hero-overlay">
+          <h2 id="heroTitle">Encounter Theme</h2>
+          <p class="muted" id="heroAttribution"></p>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Encounter Generator</h2>
+
+        <form id="encForm" class="controls" style="grid-template-columns: 1fr 1fr 1fr auto;">
+          <label>
+            Party Size
+            <input id="partySize" type="number" min="1" max="8" value="4" required />
+          </label>
+
+          <label>
+            Party Level
+            <input id="partyLevel" type="number" min="1" max="20" value="3" required />
+          </label>
+
+          <label>
+            Environment
+            <select id="environment" required>
+              <option value="dungeon">Dungeon</option>
+              <option value="forest">Forest</option>
+              <option value="swamp">Swamp</option>
+              <option value="mountain">Mountain</option>
+              <option value="desert">Desert</option>
+              <option value="city">City</option>
+              <option value="arctic">Arctic</option>
+              <option value="coast">Coast</option>
+              <option value="underdark">Underdark</option>
+            </select>
+          </label>
+
+          <button id="genBtn" type="submit">Generate</button>
+        </form>
+
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="panel">
+        <h2>Encounter Summary</h2>
+        <div class="summary" id="summary"></div>
+
+        <div style="display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.75rem;">
+          <button class="btn" id="saveBtn" type="button">Save Encounter</button>
+          <button class="btn" id="newLoreBtn" type="button">Generate Lore</button>
+        </div>
+
+        <div id="loreBox" class="lore"></div>
+      </section>
+
+      <section>
+        <h2>Monsters</h2>
+        <div id="grid" class="grid" aria-label="Encounter monsters"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Saved Encounters</h2>
+        <div id="savedList" class="saved"></div>
+      </section>
+
+      <!-- Modal for monster detail -->
+      <dialog id="monsterModal" class="modal">
+        <div class="modal-inner">
+          <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+          <div id="modalBody"></div>
+        </div>
+      </dialog>
+    </main>
+
+    <script type="module" src="./js/features/encounters.js"></script>
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

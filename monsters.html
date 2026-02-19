@@ -5,32 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>D&D Encounter Builder | Monsters</title>
     <link rel="stylesheet" href="./css/style.css" />
-    <script type="module" src="./js/main.js"></script>
-
   </head>
+
   <body>
     <header class="site-header">
       <h1>D&D Encounter Builder</h1>
-      <nav>
-        <a href="/index.html">Home</a>
-        <a href="/monsters.html" aria-current="page">Monsters</a>
-        <a href="/encounters.html">Encounters</a>
+      <nav aria-label="Main navigation">
+        <a href="./index.html">Home</a>
+        <a href="./monsters.html">Monsters</a>
+        <a href="./encounters.html">Encounters</a>
       </nav>
     </header>
 
     <main class="container">
-        <section class="hero" id="hero">
+      <section class="hero" id="hero">
         <img id="heroImg" alt="" />
         <div class="hero-overlay">
-        <h2 id="heroTitle">Adventure Theme</h2>
-        <p class="muted" id="heroAttribution"></p>
+          <h2 id="heroTitle">Theme</h2>
+          <p class="muted" id="heroAttribution"></p>
         </div>
-        </section>
+      </section>
 
-      
-      
-      
-        <section class="panel">
+      <section class="panel">
         <h2>Monster Search</h2>
 
         <div class="controls">
@@ -67,6 +63,14 @@
       <section>
         <div id="grid" class="grid" aria-label="Monster results"></div>
       </section>
+
+      <!-- Modal -->
+      <dialog id="monsterModal" class="modal">
+        <div class="modal-inner">
+          <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+          <div id="modalBody"></div>
+        </div>
+      </dialog>
     </main>
 
     <script type="module" src="./js/features/monsters.js"></script>

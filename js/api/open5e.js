@@ -7,17 +7,14 @@ async function toJson(res) {
 }
 
 export async function searchMonsters({ name = "", crMax = "" } = {}) {
-  // Open5e supports search=... and pagination.
-  // We'll fetch one page for now.
   const params = new URLSearchParams();
   if (name) params.set("search", name);
+  params.set("limit", "60");
 
   const url = `${BASE}monsters/?${params.toString()}`;
   const data = await toJson(await fetch(url));
-
   let results = data.results ?? [];
 
-  // Optional client-side CR filter (Open5e CR is string-like)
   if (crMax) {
     results = results.filter((m) => crToNumber(m.challenge_rating) <= crToNumber(crMax));
   }
@@ -25,13 +22,24 @@ export async function searchMonsters({ name = "", crMax = "" } = {}) {
   return results;
 }
 
-// Convert CR like "1/2" to number for comparison
-function crToNumber(cr) {
+export async function getMonsterBySlug(slug) {
+  const url = `${BASE}monsters/${encodeURIComponent(slug)}/`;
+  return toJson(await fetch(url));
+}
+
+export async function listMonstersPage({ page = 1, limit = 50 } = {}) {
+  const params = new URLSearchParams({ page: String(page), limit: String(limit) });
+  const url = `${BASE}monsters/?${params.toString()}`;
+  return toJson(await fetch(url)); // {count, next, previous, results}
+}
+
+export function crToNumber(cr) {
   if (!cr) return Number.POSITIVE_INFINITY;
-  if (cr.includes("/")) {
-    const [a, b] = cr.split("/").map(Number);
+  const s = String(cr).trim();
+  if (s.includes("/")) {
+    const [a, b] = s.split("/").map(Number);
     return a / b;
   }
-  const n = Number(cr);
+  const n = Number(s);
   return Number.isFinite(n) ? n : Number.POSITIVE_INFINITY;
 }
