@@ -1,0 +1,30 @@
+{
+  "locations": [
+    "a ruined watchtower covered in glowing moss",
+    "a flooded crypt beneath an abandoned chapel",
+    "a moonlit forest clearing ringed by standing stones",
+    "an underdark tunnel where whispers echo without voices",
+    "a desert canyon filled with wind-carved faces"
+  ],
+  "villains": [
+    "a warlock bound to a hungry relic",
+    "a corrupted druid spreading a blight",
+    "a baron secretly replaced by a doppelganger",
+    "a necromancer collecting names from gravestones",
+    "a cult leader promising safety from a coming eclipse"
+  ],
+  "hooks": [
+    "A traveler begs the party to retrieve a stolen heirloom before midnight.",
+    "Villagers report lights moving under the ground like lanterns in a tunnel.",
+    "A map appears in a book that none of the party remembers buying.",
+    "The local animals have gone silent, and even insects refuse to buzz.",
+    "A courier delivers a letter addressed to someone who died years ago."
+  ],
+  "twists": [
+    "The monster is protecting something even worse.",
+    "The true enemy is a magical contract, not a creature.",
+    "A trusted ally is being controlled remotely.",
+    "The lair shifts locations each night.",
+    "The treasure is cursed to attract predators."
+  ]
+}
